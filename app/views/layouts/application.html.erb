@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<html lang="en">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	  	<title>AulaInnova</title>
+	  	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	  	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	  	<%= csrf_meta_tags %>
+	</head>
+	<body>
+	    <nav class="navbar navbar-default navbar-static-top">
+	        <div class="container">
+			    <div class="navbar-header">
+			        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+			            <span class="sr-only">Toggle navigation</span>
+			            <span class="icon-bar"></span>
+			            <span class="icon-bar"></span>
+			            <span class="icon-bar"></span>
+			        </button>
+			    </div>
+		        <div id="navbar" class="navbar-collapse collapse">
+		        	<ul class="nav navbar-nav">
+		           		<li>
+		           			<a id="facebook" href="" data-toggle="tooltip" title="Facebook">
+		           				<img class="saturate" src="/images/buttons/social-media/facebook.png" width=19 height=19></img>
+		           			</a>
+		           		</li>
+		           		<li>
+		           			<a id="twitter" href="" data-toggle="tooltip" title="Twitter">
+		           				<img class="saturate" src="/images/buttons/social-media/twitter.png" width=19 height=19></img>
+		           			</a>
+		           		</li>
+		           		<li>	
+		           			<a id="googleplus" href="" data-toggle="tooltip" title="Google+">
+		           				<img class="saturate" src="/images/buttons/social-media/googleplus.png" width=19 height=19></img>
+		           			</a>
+		           		</li>
+		           		<li>
+		           			<a id="linkedin" href="" data-toggle="tooltip" title="Linkedin">
+		           				<img class="saturate" src="/images/buttons/social-media/linkedin.png" width=19 height=19></img>
+		           			</a>
+		           		</li>
+		           		<li>	
+		           			<a id="instagram" href="" data-toggle="tooltip" title="Instagram">
+		           				<img class="saturate" src="/images/buttons/social-media/instagram.png" width=19 height=19></img>
+		           			</a>
+		           		</li>
+		           		<li>	
+		           			<a id="flickr" href="" data-toggle="tooltip" title="Flickr">
+		           				<img class="saturate" src="/images/buttons/social-media/flickr.png" width=19 height=19></img>
+		           			</a>
+		           		</li>
+		           		<li>
+		           			<a id="youtube" href="" data-toggle="tooltip" title="Youtube">
+		           				<img class="saturate" src="/images/buttons/social-media/youtube.png" width=19 height=19></img>
+		           			</a>
+		           		</li>
+		           		<li>
+		           			<a id="vimeo" href="" data-toggle="tooltip" title="Vimeo">
+		           				<img class="saturate" src="/images/buttons/social-media/vimeo.png" width=19 height=19></img>
+		           			</a>
+		           		</li>
+		            </ul>
+		          	<div class="navbar-form navbar-right">
+						<%= link_to(content_tag(:i, " Iniciar Sesión", class: 'fa fa-sign-in'),  
+							{ controller: "pages", action: "login" }, class: "btn btn-success")
+						%>
+	        		</div>
+		            <ul class="nav navbar-nav">
+			            <div class="navbar-header">
+					        <a class="navbar-brand" style="color: black"> AulaInnova </a>
+					    </div>
+		                <li>
+		                	<%= link_to "Inicio", controller: "pages", action: "home" %>
+		                </li>
+		                <li class="dropdown">
+		                  	<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+		                  		Acerca de Nosotros <span class="caret"></span>
+		                  	</a>
+				            <ul class="dropdown-menu">
+					            <li>
+					                <%= link_to "Misión", controller: "pages", action: "about" %>
+					            <li>
+					                <%= link_to "Visión", controller: "pages", action: "about" %>
+					            <li>
+					                <%= link_to "Compañía", controller: "pages", action: "about" %>
+					            </li>
+				            </ul>
+		                </li>
+		                <li>
+		                	<%= link_to "Robótica Educativa", controller: "pages", action: "robotics_workshop" %>
+		                </li>
+		                <li>
+		                	<%= link_to "Galería de Imagenes", controller: "pages", action: "picture_gallery" %>
+		                </li>
+		               	<li>
+		                	<%= link_to "Blog", controller: "pages", action: "blog" %>
+		                </li>
+		               	<li>
+		                	<%= link_to "Contáctanos", controller: "pages", action: "contact" %>
+		                </li>
+		            </ul>
+		        </div>
+	        </div>
+	    </nav>
+
+	    <!--
+	    <p class="notice"><%= notice %></p>
+		<p class="alert"><%= alert %></p>
+		-->
+		
+		<%= yield %>
+
+		<div class="container marketing">
+			<hr class="featurette-divider">
+	    	<footer>
+		        <p>&copy; 2016 AulaInnova. Todos los derechos reservados.</p>
+	    	</footer>
+	    </div>
+
+	    <!-- Social Network Tooltips -->
+	    <script type="text/javascript">
+	    	$(function () {
+  				$('facebook').tooltip();
+  				$('twitter').tooltip();
+  				$('googleplus').tooltip();
+  				$('linkedin').tooltip();
+  				$('instagram').tooltip();
+  				$('flickr').tooltip();
+  				$('youtube').tooltip();
+  				$('vimeo').tooltip();
+			})
+	    </script>
+
+	</body>
+
+</html>

@@ -1,0 +1,27 @@
+body {
+
+}
+
+.div-body {
+  width: 100%;
+  height: 600px;
+	background-color: #f2f2f2;	
+}
+
+.navbar {
+	margin-top: 0;
+    margin-bottom: 0;
+}
+
+/* Filter styles with hover and transtorm */
+.saturate:hover {
+	-webkit-filter: saturate(3); filter: saturate(3);
+}
+.saturate:active {
+  transform: translateY(4px);
+}
+
+.blur {
+    -webkit-filter: blur(4px); /* Chrome, Safari, Opera */
+    filter: blur(4px);
+}
