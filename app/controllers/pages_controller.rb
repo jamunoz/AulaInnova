@@ -1,4 +1,5 @@
 class PagesController < ApplicationController
+  
   def home
   end
 
@@ -17,6 +18,4 @@ class PagesController < ApplicationController
   def picture_gallery
   end
 
-  def login
-  end
 end

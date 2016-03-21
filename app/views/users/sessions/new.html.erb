@@ -1,0 +1,52 @@
+<div class="div-body">
+    <br>
+    <div class="container">
+        <div class="form-signin">
+            <center>
+                <h3> Iniciar Sesion </h3>
+            </center>
+            
+            <br>
+            
+            <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+                <center><p class="bg-danger"><%= alert %></p></center>
+                
+                <div class="field">
+                    <label class="sr-only">Correo Electrónico</label>
+                    <%= f.email_field :email, :placeholder => "Correo Electrónico", 
+                    autofocus: true, autocomplete: "on", class: "form-control" %>
+                </div>
+
+                <div class="field">
+                  <label class="sr-only">Contraseña</label>
+                  <%= f.password_field :password, autocomplete: "off", 
+                  :placeholder => "Contraseña", class: "form-control" %>
+                </div>
+
+                <% if devise_mapping.rememberable? -%>
+                    <div class="checkbox"> 
+                        <label> 
+                            <%= f.check_box :remember_me %>
+                            Recuerdame
+                        </label>
+                    </div>
+                <% end -%>
+               
+                <%= f.submit "Ingresar", class: "btn btn-primary btn-block" %>
+                
+                <br>
+                
+                <%= render "users/shared/links" %>
+            
+            <% end %>
+            <br>
+        </div>
+    </div>
+</div>
+
+
+
+                
+                
+                

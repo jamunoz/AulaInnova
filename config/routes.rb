@@ -1,15 +1,18 @@
 Rails.application.routes.draw do
 
-  root 'pages#home'
+    devise_for :users, controllers: {
+    	sessions: 'users/sessions'
+    }
 
-  get 'about'  => 'pages#about'
-  get 'robotics_workshop'  => 'pages#robotics_workshop'
-  get 'blog'  => 'pages#blog'
-  get 'picture_gallery'  => 'pages#picture_gallery'
-  get 'contact'  => 'pages#contact'
-  get 'login'  => 'pages#login'
+  	root 'pages#home'
 
-  resources :abouts, except: [:new, :destroy]
+	  get 'pages/home', to: 'pages#home'
+  	get 'pages/about' => 'pages#about'
+  	get 'pages/robotics_workshop' => 'pages#robotics_workshop'
+  	get 'pages/blog' => 'pages#blog'
+  	get 'pages/picture_gallery' => 'pages#picture_gallery'
+  	get 'pages/contact' => 'pages#contact'
 
+  	resources :abouts, except: [:new, :destroy]
 end
 
