@@ -10,8 +10,10 @@
             
             <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
-                <center><p class="bg-danger"><%= alert %></p></center>
+                <center><label style="color: #e60000"><%= alert %></label></center>
                 
+                <br>
+
                 <div class="field">
                     <label class="sr-only">Correo Electrónico</label>
                     <%= f.email_field :email, :placeholder => "Correo Electrónico", 
@@ -33,7 +35,7 @@
                     </div>
                 <% end -%>
                
-                <%= f.submit "Ingresar", class: "btn btn-primary btn-block" %>
+                <%= f.submit "Iniciar", class: "btn btn-primary btn-block" %>
                 
                 <br>
                 

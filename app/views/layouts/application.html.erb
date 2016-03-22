@@ -10,8 +10,12 @@
 	</head>
 	<body>
 		
-		<center><p class="bg-info"><%= notice %></p></center>
-			    
+		<center>
+			<div style="background-color: #666666; color: white">
+				<%= notice %>
+			</div>
+		</center>
+
 	    <nav class="navbar navbar-default navbar-static-top">
 	        <div class="container">
 			    <div class="navbar-header">
@@ -23,53 +27,38 @@
 			        </button>
 			    </div>
 		        <div id="navbar" class="navbar-collapse collapse">
-		        	<ul class="nav navbar-nav">
-		           		<li>
+		        	<ul class="nav navbar-nav" style="margin: 5px">
 		           			<a id="facebook" href="https://www.facebook.com/" data-toggle="tooltip" title="Facebook">
 		           				<img class="saturate" src="/images/buttons/social-media/facebook.png" width=19 height=19></img>
 		           			</a>
-		           		</li>
-		           		<li>
 		           			<a id="twitter" href="https://www.twitter.com/" data-toggle="tooltip" title="Twitter">
 		           				<img class="saturate" src="/images/buttons/social-media/twitter.png" width=19 height=19></img>
 		           			</a>
-		           		</li>
-		           		<li>	
 		           			<a id="googleplus" href="https://plus.google.com/" data-toggle="tooltip" title="Google+">
 		           				<img class="saturate" src="/images/buttons/social-media/googleplus.png" width=19 height=19></img>
 		           			</a>
-		           		</li>
-		           		<li>
 		           			<a id="linkedin" href="https://www.linkedin.com" data-toggle="tooltip" title="Linkedin">
 		           				<img class="saturate" src="/images/buttons/social-media/linkedin.png" width=19 height=19></img>
 		           			</a>
-		           		</li>
-		           		<li>	
 		           			<a id="instagram" href="https://www.instagram.com" data-toggle="tooltip" title="Instagram">
 		           				<img class="saturate" src="/images/buttons/social-media/instagram.png" width=19 height=19></img>
 		           			</a>
-		           		</li>
-		           		<li>	
 		           			<a id="flickr" href="https://www.flickr.com/" data-toggle="tooltip" title="Flickr">
 		           				<img class="saturate" src="/images/buttons/social-media/flickr.png" width=19 height=19></img>
 		           			</a>
-		           		</li>
-		           		<li>
 		           			<a id="youtube" href="https://www.youtube.com/" data-toggle="tooltip" title="Youtube">
 		           				<img class="saturate" src="/images/buttons/social-media/youtube.png" width=19 height=19></img>
 		           			</a>
-		           		</li>
-		           		<li>
 		           			<a id="vimeo" href="https://www.vimeo.com/" data-toggle="tooltip" title="Vimeo">
 		           				<img class="saturate" src="/images/buttons/social-media/vimeo.png" width=19 height=19></img>
 		           			</a>
-		           		</li>
 		            </ul>
 		          	<div class="navbar-form navbar-right">
 		          		<% if user_signed_in? %>
-						<%=	link_to " Cerrar Sesión", destroy_user_session_path, class: "btn btn-lg btn-success fa fa-sign-out", :method => :delete  %>
+							<%=	link_to " Cerrar Sesión", destroy_user_session_path, class: "btn btn-success fa fa-sign-out", :method => :delete  %>
 						<% else %>
-						<%=	link_to " Iniciar Sesión", user_session_path, class: "btn btn-lg btn-success fa fa-sign-in" %>
+							<%=	link_to " Registrarse", new_user_registration_path, class: "btn btn-success fa fa-user-plus" %>
+							<%=	link_to " Iniciar Sesión", user_session_path, class: "btn btn-success fa fa-sign-in" %>
 						<% end %>
 	        		</div>
 		            <ul class="nav navbar-nav">

@@ -11,21 +11,21 @@ es:
       user: Usuario
   devise:
     confirmations:
-      confirmed: Tu cuenta ha sido confirmada satisfactoriamente.
+      confirmed: Tu cuenta ha sido confirmada satisfactoriamente
       new:
         resend_confirmation_instructions: Reenviar instrucciones de confirmación
-      send_instructions: Vas a recibir un correo con instrucciones sobre cómo confirmar tu cuenta en unos minutos.
-      send_paranoid_instructions: Si tu correo existe en nuestra base de datos, en unos minutos recibirás un correo con instrucciones sobre cómo confirmar tu cuenta.
+      send_instructions: Vas a recibir un correo con instrucciones sobre cómo confirmar tu cuenta en unos minutos
+      send_paranoid_instructions: Si tu correo existe en nuestra base de datos, en unos minutos recibirás un correo con instrucciones sobre cómo confirmar tu cuenta
     failure:
       already_authenticated: Ya has iniciado sesión
-      inactive: Tu cuenta aún no ha sido activada.
-      invalid: Email o contraseña no válidos.
-      last_attempt: Tienes un intento más antes de que tu cuenta sea bloqueada.
-      locked: Tu cuenta está bloqueada.
-      not_found_in_database: Email o contraseña no válidos.
-      timeout: Tu sesión expiró. Por favor, inicia sesión nuevamente para continuar.
-      unauthenticated: Tienes que iniciar sesión o registrarte para poder continuar.
-      unconfirmed: Tienes que confirmar tu cuenta para poder continuar.
+      inactive: Tu cuenta aún no ha sido activada
+      invalid: Email y/o contraseña no válidos
+      last_attempt: Tienes un intento más antes de que tu cuenta sea bloqueada
+      locked: Tu cuenta está bloqueada
+      not_found_in_database: Email y/o contraseña no válidos
+      timeout: Tu sesión expiró. Por favor, inicia sesión nuevamente para continuar
+      unauthenticated: Tienes que iniciar sesión o registrarte para continuar
+      unconfirmed: Tienes que confirmar tu cuenta para continuar
     mailer:
       confirmation_instructions:
         action: Confirmar mi cuenta
@@ -64,7 +64,7 @@ es:
       no_token: No puedes acceder a esta página si no es a través de un enlace para resetear tu contraseña. Si has llegado hasta aquí desde el email para resetear tu contraseña, por favor asegúrate de que la URL introducida está completa.
       send_instructions: Recibirás un correo con instrucciones sobre cómo resetear tu contraseña en unos pocos minutos.
       send_paranoid_instructions: Si tu correo existe en nuestra base de datos, recibirás un correo con instrucciones sobre cómo resetear tu contraseña en tu bandeja de entrada.
-      updated: Se ha cambiado tu contraseña. Ya iniciaste sesión.
+      updated: Se ha cambiado tu contraseña. Sesión iniciada.
       updated_not_active: Tu contraseña fue cambiada.
     registrations:
       destroyed: Fue grato tenerte con nosotros. Tu cuenta fue cancelada.
@@ -108,6 +108,7 @@ es:
       unlocked: Tu cuenta ha sido desbloqueada. Ya puedes iniciar sesión.
   errors:
     messages:
+      taken: ya está siendo utilizado
       blank: debe ser completado
       already_confirmed: ya ha sido confirmada, por favor intenta iniciar sesión
       confirmation_period_expired: necesita confirmarse dentro de %{period}, por favor solicita una nueva

@@ -30,6 +30,8 @@ gem 'bootstrap-sass', '~> 3.3.6'
 #gem 'sass-rails', '>= 3.2'
 # Font Awesome
 gem 'font-awesome-sass', '~> 4.5.0'
+# Mail Catcher
+gem 'mailcatcher', '~> 0.6.1'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

@@ -1,16 +1,36 @@
-<h2>Resend confirmation instructions</h2>
+<div class="div-body">
+    <br>
+    <div class="container">
+        <div class="form-signin">
+            <center>
+				<h3>Reenviar Confirmación</h3>
+			</center>
+			
+			<%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
+				
+				<label style="color: #e60000"><%= devise_error_messages! %></label>
 
-<%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
-  <%= devise_error_messages! %>
+				<br><br>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %> 
-  </div>
+			  	<div class="field">
+			    	<%= f.email_field :email, autofocus: true, 
+			    	class: "form-control", :placeholder => "Correo Electrónico", 
+			    	value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
+			  	</div>
 
-  <div class="actions">
-    <%= f.submit "Resend confirmation instructions" %>
-  </div>
-<% end %>
+			  	<br>
 
-<%= render "users/shared/links" %>
+			  	<div class="actions">
+			    	<%= f.submit "Re-Enviar", 
+			    	class: "btn btn-primary btn-block" %>
+			  	</div>
+
+			  	<br>
+
+			  	<%= render "users/shared/links" %>
+
+			<% end %>
+            <br>
+        </div>
+    </div>
+</div>

@@ -1,25 +1,48 @@
-<h2>Change your password</h2>
+<div class="div-body">
+    <br>
+    <div class="container">
+        <div class="form-signin">
+            <center>
+                <h3>Cambiar Contraseña</h3>
+            </center>
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
-  <%= f.hidden_field :reset_password_token %>
+            <br>
+            
+            <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+                
+                <label style="color: #e60000"><%= devise_error_messages! %></label>
 
-  <div class="field">
-    <%= f.label :password, "New password" %><br />
-    <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em><br />
-    <% end %>
-    <%= f.password_field :password, autofocus: true, autocomplete: "off" %>
-  </div>
+                <br><br>
 
-  <div class="field">
-    <%= f.label :password_confirmation, "Confirm new password" %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
+                <%= f.hidden_field :reset_password_token %>
 
-  <div class="actions">
-    <%= f.submit "Change my password" %>
-  </div>
-<% end %>
+                <div class="field">
+                    <%= f.password_field :password, autofocus: true, autocomplete: "off",
+                    class: "form-control", :placeholder => "Nueva Contraseña"  %>
+                    <% if @minimum_password_length %>
+                        &nbsp;(Debe tener un largo mínimo de <%= @minimum_password_length %> digitos)
+                    <% end %>
+                </div>
 
-<%= render "users/shared/links" %>
+                <br>
+                
+                <div class="field">
+                    <%= f.password_field :password_confirmation, autocomplete: "off",
+                    class: "form-control", :placeholder => "Confirmar nueva Contraseña"  %>
+                </div>
+
+                <br>
+
+                <div class="actions">
+                    <%= f.submit "Cambiar", class: "btn btn-primary btn-block" %>
+                </div>
+                
+                <br>
+                
+                <%= render "users/shared/links" %>
+
+            <% end %>
+            <br>
+        </div>
+    </div>
+</div>
