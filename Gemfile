@@ -25,6 +25,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Devise
 gem 'devise'
 gem 'devise-i18n'
+# Cancancan
+gem 'cancancan'
 # Bootstrap
 gem 'bootstrap-sass', '~> 3.3.6'
 #gem 'sass-rails', '>= 3.2'

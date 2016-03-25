@@ -19,14 +19,14 @@ default: &default
 
 development:
   <<: *default
-  database: AulaInnova_development
+  database: AulaInnova_v2_development
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: AulaInnova_test
+  database: AulaInnova_v2_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: AulaInnova_production
+  database: AulaInnova_v2_production
   username: AulaInnova
   password: <%= ENV['AULAINNOVA_DATABASE_PASSWORD'] %>

@@ -55,10 +55,10 @@
 		            </ul>
 		          	<div class="navbar-form navbar-right">
 		          		<% if user_signed_in? %>
-							<%=	link_to " Cerrar Sesión", destroy_user_session_path, class: "btn btn-success fa fa-sign-out", :method => :delete  %>
+							<%=	link_to " Cerrar Sesión", destroy_user_session_path, class: "btn btn-success", :method => :delete  %>
 						<% else %>
-							<%=	link_to " Registrarse", new_user_registration_path, class: "btn btn-success fa fa-user-plus" %>
-							<%=	link_to " Iniciar Sesión", user_session_path, class: "btn btn-success fa fa-sign-in" %>
+							<%=	link_to " Registrarse", new_user_registration_path, class: "btn btn-success" %>
+							<%=	link_to " Iniciar Sesión", user_session_path, class: "btn btn-success" %>
 						<% end %>
 	        		</div>
 		            <ul class="nav navbar-nav">
