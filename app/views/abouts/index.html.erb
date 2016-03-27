@@ -1,29 +1,59 @@
-<h1>Listing Abouts</h1>
+<div class="div-body">
+  <div class="container">
 
-<table>
-  <thead>
-    <tr>
-      <th>Mission</th>
-      <th>Vision</th>
-      <th>Company</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+    <h1>Indice</h1>
 
-  <tbody>
-    <% @abouts.each do |about| %>
-      <tr>
-        <td><%= about.mission %></td>
-        <td><%= about.vision %></td>
-        <td><%= about.company %></td>
-        <td><%= link_to 'Show', about %></td>
-        <td><%= link_to 'Edit', edit_about_path(about) %></td>
-        <!-- <td><%# link_to 'Destroy', about, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+    <table>
+      <thead>
+        <tr>
+          <th>Misión</th>
+          <th>Visión</th>
+          <th>Compañía</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
 
-<br>
+      <tbody>
+        <% @abouts.each do |about| %>
+          <tr>
+            <td><%= about.mission %></td>
+            <td><%= about.vision %></td>
+            <td><%= about.company %></td>
+            <td>
+              <%= link_to '', about, class: "glyphicon glyphicon-eye-open", 
+                id: "mostrar", 'data-toggle' => 'tooltip', 'title' => 'Mostrar'
+              %>
+            </td>
+            <td>&nbsp;</td>
+            <td>
+              <%= link_to '', edit_about_path(about), class: "glyphicon glyphicon-pencil", 
+                id: "editar", 'data-toggle' => 'tooltip', 'title' => 'Editar'
+              %>
+            </td>
+            <td>&nbsp;</td>
+            <td>
+              <%= link_to '', about, class: "glyphicon glyphicon-remove", 
+                id: "eliminar", 'data-toggle' => 'tooltip', 'title' => 'Eliminar',
+                method: :delete, data: { confirm: 'Estás seguro de este about?' } 
+              %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
 
-<%# link_to 'New About', new_about_path %>
+    <br>
+
+    <%= link_to 'Nuevo About', new_about_path, class: "btn btn-primary" %>
+
+  </div>
+</div>
+
+<!-- CRUD Tooltips -->
+<script type="text/javascript">
+  $(function () {
+    $('mostrar').tooltip();
+    $('editar').tooltip();
+    $('eliminar').tooltip();
+  })
+</script>

@@ -1,29 +1,37 @@
+<br>
+
 <%= form_for(@about) do |f| %>
+  
   <% if @about.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@about.errors.count, "error") %> prohibited this about from being saved:</h2>
-
       <ul>
-      <% @about.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% @about.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
 
   <div class="field">
-    <%= f.label :mission %><br>
-    <%= f.text_area :mission %>
+    <br> <label> Misión </label> <br>
+    <%= f.cktext_area :mission %>
   </div>
   <div class="field">
-    <%= f.label :vision %><br>
-    <%= f.text_area :vision %>
+    <br> <label> Visión </label> <br>
+    <%= f.cktext_area :vision %>
   </div>
   <div class="field">
-    <%= f.label :company %><br>
-    <%= f.text_area :company %>
+    <br> <label> Compañía </label> <br>
+    <%= f.cktext_area :company %>
   </div>
+
+  <br>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Enviar", class: "btn btn-success" %>
   </div>
+  <br>
+
 <% end %>
+
+<br>

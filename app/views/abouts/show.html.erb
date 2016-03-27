@@ -1,19 +1,27 @@
-<p id="notice"><%= notice %></p>
+<div class="div-body">
+	<div class="container">
 
-<p>
-  <strong>Mission:</strong>
-  <%= @about.mission %>
-</p>
+		<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Vision:</strong>
-  <%= @about.vision %>
-</p>
+		<br><p>
+		  <strong>Misión</strong>
+		  <%= raw @about.mission %>
+		</p><br>
 
-<p>
-  <strong>Company:</strong>
-  <%= @about.company %>
-</p>
+		<br><p>
+		  <strong>Visión</strong>
+		  <%= raw @about.vision %>
+		</p><br>
 
-<%= link_to 'Edit', edit_about_path(@about) %> |
-<%= link_to 'Back', abouts_path %>
+		<br><p>
+		  <strong>Compañía</strong>
+		  <%= raw @about.company %>
+		</p><br>
+
+		<%= link_to 'Editar', edit_about_path(@about), class: "btn btn-primary" %>
+		<%= link_to 'Volver al índice', abouts_path, class: "btn btn-primary" %>
+
+		<br><br>
+		
+	</div>
+</div>

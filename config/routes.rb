@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  mount Ckeditor::Engine => '/ckeditor'
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
     devise_for :users, controllers: {
     	sessions: 'users/sessions'
     }
@@ -13,6 +15,6 @@ Rails.application.routes.draw do
   	get 'pages/picture_gallery' => 'pages#picture_gallery'
   	get 'pages/contact' => 'pages#contact'
 
-  	resources :abouts, except: [:new, :destroy]
+  	resources :abouts #, except: [:new, :destroy]
 end
 

@@ -34,6 +34,11 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'font-awesome-sass', '~> 4.5.0'
 # Mail Catcher
 gem 'mailcatcher', '~> 0.6.1'
+# Rails Admin 
+gem 'rails_admin'
+# CKEditor
+gem 'ckeditor'
+gem 'paperclip'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

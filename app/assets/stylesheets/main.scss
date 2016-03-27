@@ -14,14 +14,19 @@ body {
 }
 
 /* Filter styles with hover and transtorm */
-.saturate:hover {
-	-webkit-filter: saturate(3); filter: saturate(3);
+.opacity:hover {
+	-webkit-filter: opacity(70%);
+  filter: opacity(70%);
 }
-.saturate:active {
+.opacity:active {
   transform: translateY(4px);
 }
 
 .blur {
     -webkit-filter: blur(4px); /* Chrome, Safari, Opera */
     filter: blur(4px);
+}
+
+.saturate {
+  -webkit-filter: saturate(3); filter: saturate(3);
 }

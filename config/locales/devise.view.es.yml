@@ -118,3 +118,14 @@ es:
       not_saved:
         one: '<h4> Ocurrió un error: </h4>'
         other: '<h4> Ocurrieron %{count} errores: </h4>'
+  datetime:
+    distance_in_words:
+      less_than_x_minutes:
+        one: "menos que un minuto"
+        other: "menos que %{count} minutos"
+      x_minutes:
+        one: "1 minuto"
+        other: "%{count} minutos"
+      about_x_hours:
+        one: "alrededor de  1 hora"
+        other: "alrededor de %{count} horas"

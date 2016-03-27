@@ -1,6 +1,13 @@
-<h1>Editing About</h1>
+<div class="div-body">
+	<div class="container">
 
-<%= render 'form' %>
+		<h1>Editar About</h1>
 
-<%= link_to 'Show', @about %> |
-<%= link_to 'Back', abouts_path %>
+		<%= render 'form' %>
+
+		<%= link_to 'Mostrar', @about, class: "btn btn-primary"  %>
+		<%= link_to 'Volver al índice', abouts_path, class: "btn btn-primary"  %>
+
+		<br><br>
+	</div>
+</div>
