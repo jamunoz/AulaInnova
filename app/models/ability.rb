@@ -9,7 +9,8 @@ class Ability
         if user and user.has_role? :administrador
             can :manage, :all
             can :access, :rails_admin
-            can :dashboard  
+            can :dashboard
+            can :history, :all  
         end
 
         #can :assign_roles, User if user.has_role? :administrador

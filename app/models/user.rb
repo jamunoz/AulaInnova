@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
  	
+	has_paper_trail
+ 	
 	validates :email, :password, :password_confirmation, :roles_mask, presence: true
 	validates :password, :password_confirmation, length: { in: 8..20 }
 	validates :roles_mask, numericality: { only_integer: true }

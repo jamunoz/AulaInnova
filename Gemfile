@@ -39,6 +39,8 @@ gem 'rails_admin'
 # CKEditor
 gem 'ckeditor'
 gem 'paperclip'
+# Paper Rail
+gem 'paper_trail'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
