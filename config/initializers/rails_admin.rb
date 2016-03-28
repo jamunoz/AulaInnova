@@ -34,4 +34,14 @@ RailsAdmin.config do |config|
     # history_index
     # history_show
   end
+
+  config.model About do
+      edit do
+        # For RailsAdmin >= 0.5.0
+        field :mission, :ck_editor
+        field :vision, :ck_editor
+        field :company, :ck_editor
+      end
+    end
+
 end
