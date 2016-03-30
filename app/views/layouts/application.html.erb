@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<html lang="en">
+		<html lang="es">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 	  	<title>AulaInnova</title>
 	  	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
@@ -10,91 +10,7 @@
 	</head>
 	<body>
 		
-		<center>
-			<div style="background-color: #666666; color: white">
-				<%= notice %>
-			</div>
-		</center>
-
-		<nav class="navbar navbar-default navbar-static-top">
-	        <div class="container">
-		        	<ul class="nav navbar-nav" style="margin: 14px">
-		           			<a id="facebook" href="https://www.facebook.com/" data-toggle="tooltip" title="Facebook">
-		           				<img class="opacity" src="/images/buttons/social-media/facebook.png" width=21 height=21></img>
-		           			</a>
-		           			<a id="twitter" href="https://www.twitter.com/" data-toggle="tooltip" title="Twitter">
-		           				<img class="opacity" src="/images/buttons/social-media/twitter.png" width=21 height=21></img>
-		           			</a>
-		           			<a id="googleplus" href="https://plus.google.com/" data-toggle="tooltip" title="Google+">
-		           				<img class="opacity" src="/images/buttons/social-media/googleplus.png" width=21 height=21></img>
-		           			</a>
-		           			<a id="linkedin" href="https://www.linkedin.com" data-toggle="tooltip" title="Linkedin">
-		           				<img class="opacity" src="/images/buttons/social-media/linkedin.png" width=21 height=21></img>
-		           			</a>
-		           			<a id="instagram" href="https://www.instagram.com" data-toggle="tooltip" title="Instagram">
-		           				<img class="opacity" src="/images/buttons/social-media/instagram.png" width=21 height=21></img>
-		           			</a>
-		           			<a id="flickr" href="https://www.flickr.com/" data-toggle="tooltip" title="Flickr">
-		           				<img class="opacity" src="/images/buttons/social-media/flickr.png" width=21 height=21></img>
-		           			</a>
-		           			<a id="youtube" href="https://www.youtube.com/" data-toggle="tooltip" title="Youtube">
-		           				<img class="opacity" src="/images/buttons/social-media/youtube.png" width=21 height=21></img>
-		           			</a>
-		           			<a id="vimeo" href="https://www.vimeo.com/" data-toggle="tooltip" title="Vimeo">
-		           				<img class="opacity" src="/images/buttons/social-media/vimeo.png" width=21 height=21></img>
-		           			</a>
-		            </ul>
-		          	<div class="navbar-form navbar-right">
-		          		<% if user_signed_in? %>
-		          			<%=	link_to "Panel de Control", rails_admin_path, 
-		          				class: "btn btn-primary" %>
-							<%=	link_to "Cerrar Sesión", destroy_user_session_path, 
-								class: "btn btn-danger", :method => :delete  %>
-						<% else %>
-							<%=	link_to "Registrarse", new_user_registration_path, class: "btn btn-primary" %>
-							<%=	link_to "Iniciar Sesión", user_session_path, 
-								class: "btn btn-primary" %>
-						<% end %>
-	        		</div>
-			</div>
-		</nav>
-	    <nav class="navbar navbar-default navbar-static-top">
-	        <div class="container">
-			    <div class="navbar-header">
-			        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-			            <span class="sr-only">Toggle navigation</span>
-			            <span class="icon-bar"></span>
-			            <span class="icon-bar"></span>
-			            <span class="icon-bar"></span>
-			        </button>
-			    </div>
-		        <div id="navbar" class="navbar-collapse collapse">
-		            <ul class="nav navbar-nav">
-			            <div class="navbar-header">
-					        <a class="navbar-brand" style="color: black"> AulaInnova </a>
-					    </div>
-		                <li>
-		                	<%= link_to "Inicio", pages_home_path %>
-		                </li>
-		               	<li>
-		                	<%= link_to "Acerca de Nosotros", pages_about_path %>
-		                </li> 
-		                <li>
-		                	<%= link_to "Robótica Educativa", pages_robotics_workshop_path %>
-		                </li>
-		                <li>
-		                	<%= link_to "Galería de Imagenes", pages_picture_gallery_path %>
-		                </li>
-		               	<li>
-		                	<%= link_to "Blog", pages_blog_path %>
-		                </li>
-		               	<li>
-		                	<%= link_to "Contáctanos", pages_contact_path %>
-		                </li>
-		            </ul>
-		        </div>
-	        </div>
-	    </nav>
+		<%= render 'pages/shared/header' %>
 		
 		<%= yield %>
 

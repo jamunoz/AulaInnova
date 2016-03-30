@@ -6,15 +6,17 @@ Rails.application.routes.draw do
     	sessions: 'users/sessions'
     }
 
-  	root 'pages#home'
+  root 'pages#home'
 
-	  get 'pages/home', to: 'pages#home'
-  	get 'pages/about' => 'pages#about'
-  	get 'pages/robotics_workshop' => 'pages#robotics_workshop'
-  	get 'pages/blog' => 'pages#blog'
-  	get 'pages/picture_gallery' => 'pages#picture_gallery'
-  	get 'pages/contact' => 'pages#contact'
+	get 'pages/home', to: 'pages#home'
+  #get 'pages/about' => 'pages#about'
+  get 'pages/robotics_workshop' => 'pages#robotics_workshop'
+  get 'pages/blog' => 'pages#blog'
+  get 'pages/picture_gallery' => 'pages#picture_gallery'
+  get 'pages/contact' => 'pages#contact'
 
-  	resources :abouts #, except: [:new, :destroy]
+  resources :abouts, only: [:show]
+  get 'pages/about' => 'abouts#show', id: 2
+
 end
 

@@ -1,10 +1,6 @@
 class User < ActiveRecord::Base
  	
 	has_paper_trail
- 	
-	validates :email, :password, :password_confirmation, :roles_mask, presence: true
-	validates :password, :password_confirmation, length: { in: 8..20 }
-	validates :roles_mask, numericality: { only_integer: true }
 
   	# Include default devise modules. Others available are:
   	# :lockable, :timeoutable and :omniauthable
@@ -12,7 +8,7 @@ class User < ActiveRecord::Base
          	:recoverable, :rememberable, :trackable, :validatable,
          	:confirmable
 
-    ROLES = %i[administrador miembro]
+    ROLES = %i[administrador]
 
     def roles=(roles)
 		roles = [*roles].map { |r| r.to_sym }

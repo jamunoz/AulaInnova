@@ -36,12 +36,63 @@ RailsAdmin.config do |config|
   end
 
   config.model About do
-      edit do
-        # For RailsAdmin >= 0.5.0
-        field :mission, :ck_editor
-        field :vision, :ck_editor
-        field :company, :ck_editor
-      end
+    label "Acerca de Nosotros" 
+    edit do
+      # For RailsAdmin >= 0.5.0
+      field :mission, :ck_editor
+      field :vision, :ck_editor
+      field :company, :ck_editor
+
+      # field :mission do
+      #   label "Misión"
+      # end
+      #   field :vision do
+      #   label "Visión"
+      # end
+      # field :company do
+      #   label "Compañía"
+      # end
+
     end
+  end
+
+  config.model User do
+    edit do
+
+      field :email do
+        required true 
+        #label "Correo Electrónico"
+        help 'Requerido. Longitud de hasta 255.'
+      end
+        field :password do
+        required true 
+        #label "Contraseña"
+        help 'Requerido. Longitud entre 8 y 20.'
+      end
+
+      field :password_confirmation do
+        required true 
+        #label "Confirmar Contraseña"
+        help 'Requerido.'
+      end
+
+      field :roles_mask do
+        label "Rol"
+        help 'Opcional.'
+      end
+
+      exclude_fields :reset_password_sent_at
+      exclude_fields :remember_created_at
+      exclude_fields :sign_in_count
+      exclude_fields :current_sign_in_at
+      exclude_fields :last_sign_in_at
+      exclude_fields :current_sign_in_ip
+      exclude_fields :last_sign_in_ip
+      exclude_fields :confirmation_token
+      exclude_fields :confirmed_at
+      exclude_fields :confirmation_sent_at
+      exclude_fields :unconfirmed_email  
+    end
+  end
 
 end

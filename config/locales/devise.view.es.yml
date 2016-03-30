@@ -2,11 +2,15 @@ es:
   activerecord:
     attributes:
       user:
-        current_password: Contraseña actual
-        email: Correo electrónico
+        current_password: Contraseña Actual
+        email: Correo Electrónico
         password: Contraseña
-        password_confirmation: Confirmación de la contraseña
+        password_confirmation: Confirmar Contraseña
         remember_me: Recordarme
+      about:
+        mission: Misión
+        vision: Visión
+        company: Compañía
     models:
       user: Usuario
   devise:
@@ -19,7 +23,7 @@ es:
     failure:
       already_authenticated: Ya has iniciado sesión
       inactive: Tu cuenta aún no ha sido activada
-      invalid: Email y/o contraseña no válidos
+      invalid: Email y/o contraseña incorrectos
       last_attempt: Tienes un intento más antes de que tu cuenta sea bloqueada
       locked: Tu cuenta está bloqueada
       not_found_in_database: Email y/o contraseña no válidos
@@ -108,24 +112,31 @@ es:
       unlocked: Tu cuenta ha sido desbloqueada. Ya puedes iniciar sesión.
   errors:
     messages:
-      taken: ya está siendo utilizado
-      blank: debe ser completado
-      already_confirmed: ya ha sido confirmada, por favor intenta iniciar sesión
+      taken: ya está siendo utilizado.
+      blank: sin completar.
+      already_confirmed: ya ha sido confirmada, por favor intenta iniciar sesión.
       confirmation_period_expired: necesita confirmarse dentro de %{period}, por favor solicita una nueva
       expired: ha expirado, por favor solicita una nueva
       not_found: no se ha encontrado
       not_locked: no estaba bloqueada
       not_saved:
-        one: '<h4> Ocurrió un error: </h4>'
-        other: '<h4> Ocurrieron %{count} errores: </h4>'
+        one: 'Ocurrió un error:'
+        other: 'Ocurrieron %{count} errores:'
+      too_short: requiere longitud mínima.
+      too_long: requiere longitud máxima.
+      confirmation: debe coincidir.
+      invalid: inválido
   datetime:
     distance_in_words:
       less_than_x_minutes:
-        one: "menos que un minuto"
-        other: "menos que %{count} minutos"
+        one: Menos que un minuto
+        other: Menos que %{count} minutos
       x_minutes:
-        one: "1 minuto"
-        other: "%{count} minutos"
+        one: Hace 1 minuto
+        other: Hace %{count} minutos
       about_x_hours:
-        one: "alrededor de  1 hora"
-        other: "alrededor de %{count} horas"
+        one: Alrededor de 1 hora
+        other: Alrededor de %{count} horas
+      x_days:
+        one: Hace 1 día
+        other: Hace %{count} días

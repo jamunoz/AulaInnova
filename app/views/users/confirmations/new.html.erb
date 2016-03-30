@@ -8,9 +8,9 @@
 			
 			<%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
 				
-				<label style="color: #e60000"><%= devise_error_messages! %></label>
-
-				<br><br>
+              	<br>
+              	<%= devise_error_messages! %>
+              	<br>
 
 			  	<div class="field">
 			    	<%= f.email_field :email, autofocus: true, 
@@ -21,7 +21,7 @@
 			  	<br>
 
 			  	<div class="actions">
-			    	<%= f.submit "Re-Enviar", 
+			    	<%= f.submit "Reenviar", 
 			    	class: "btn btn-primary btn-block" %>
 			  	</div>
 

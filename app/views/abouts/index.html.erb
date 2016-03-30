@@ -1,7 +1,7 @@
-<div class="div-body">
   <div class="container">
 
-    <h1>Indice</h1>
+    <center><h2>Indice</h2></center>
+    <br>
 
     <table>
       <thead>
@@ -34,7 +34,7 @@
             <td>
               <%= link_to '', about, class: "glyphicon glyphicon-remove", 
                 id: "eliminar", 'data-toggle' => 'tooltip', 'title' => 'Eliminar',
-                method: :delete, data: { confirm: 'Estás seguro de este about?' } 
+                method: :delete, data: { confirm: 'Estás seguro de eliminar este elemento?' } 
               %>
             </td>
           </tr>
@@ -47,7 +47,6 @@
     <%= link_to 'Nuevo About', new_about_path, class: "btn btn-primary" %>
 
   </div>
-</div>
 
 <!-- CRUD Tooltips -->
 <script type="text/javascript">

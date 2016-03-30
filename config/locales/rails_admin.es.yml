@@ -18,7 +18,7 @@ es:
       ends_with: Termina con
     loading: "Cargando..."
     home:
-      name: Inicio
+      name: Volver al Inicio
     pagination:
       previous: "&laquo; Anterior"
       next: "Siguiente &raquo;"
@@ -28,9 +28,9 @@ es:
       search: "Buscar"
       filter: "Filtrar"
       refresh: "Actualizar"
-      show_all: "Mostrar todo"
-      add_filter: "Añadir filtro"
-      bulk_menu_title: "Elementos seleccionados"
+      show_all: "Mostrar Todo"
+      add_filter: "Añadir Filtro"
+      bulk_menu_title: "Elementos Seleccionados"
       remove: "Eliminar"
       add_new: "Agregar nuevo"
       chosen: "Elegido %{name}"
@@ -40,11 +40,11 @@ es:
       down: "Abajo"
       navigation: "Navegación"
       navigation_static_label: "Enlaces"
-      log_out: "Salir"
+      log_out: "Cerrar Sesión"
       ago: "atrás" #TODO: better something like "%{time} ago" -> "hace %{time}"
     flash:
       successful: "%{name} %{action} con éxito"
-      error: "%{name} no pudo ser %{action}"
+      error: "%{name} no pudo ser %{action}:"
       noaction: "No se llevó a cabo ninguna acción"
       model_not_found: "El modelo '%{model}' no se pudo encontrar"
       object_not_found: "%{model} con id '%{id}' no se pudo encontrar"
@@ -59,9 +59,9 @@ es:
       message: "Mensaje"
     actions:
       dashboard:
-        title: "Administración del sitio"
-        menu: "Panel de control"
-        breadcrumb: "Panel de control"
+        title: "Panel de Control"
+        menu: "Panel de Control"
+        breadcrumb: "Panel de Control"
       index:
         title: "Lista de %{model_label_plural}"
         menu: "Listar"
@@ -94,13 +94,13 @@ es:
         title: "Eliminar %{model_label_plural}"
         menu: "Eliminar varios"
         breadcrumb: "Eliminar varios"
-        bulk_link: "Eliminar %{model_label_plural} seleccionados"
+        bulk_link: "Eliminar %{model_label_plural}"
       export:
         title: "Exportar %{model_label}"
         menu: "Exportar"
         breadcrumb: "Exportar"
-        link: "Exportar %{model_label_plural} encontrados"
-        bulk_link: "Exportar %{model_label_plural} seleccionados"
+        link: "Exportar %{model_label_plural}"
+        bulk_link: "Exportar %{model_label_plural}"
         done: "exportados"
       history_index:
         title: "Historial para %{model_label_plural}"
@@ -124,7 +124,7 @@ es:
       all_of_the_following_related_items_will_be_deleted: "? Los siguientes elementos relacionados pueden ser eliminados o quedar huérfanos:"
       are_you_sure_you_want_to_delete_the_object: "¿Está seguro de que quiere eliminar este %{model_name}"
       confirmation: "Si, estoy seguro"
-      bulk_delete: "Los siguientes objetos serán eliminados, lo cual puede eliminar o dejar huérfanas algunas de sus dependencias relacionadas:"
+      bulk_delete: "Los siguientes objetos serán eliminados, lo cual puede eliminar o dejar sin relacion las siguientes dependencias:"
       new_model: "%{name} (nuevo)"
     export:
       confirmation: "Exportar a %{name}"
