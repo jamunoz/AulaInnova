@@ -18,4 +18,6 @@ class Post < ActiveRecord::Base
 	attr_accessor :delete_asset
 	before_validation { self.asset.clear if self.delete_asset == '1' }
 
+	self.per_page = 5
+
 end
