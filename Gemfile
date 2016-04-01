@@ -44,6 +44,8 @@ gem 'paper_trail'
 # TZInfo
 gem 'tzinfo', '~> 1.2', '>= 1.2.2'
 gem 'tzinfo-data', '~> 1.2016', '>= 1.2016.3'
+# Pagination
+gem 'will_paginate', '~> 3.0.6'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

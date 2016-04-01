@@ -47,7 +47,14 @@
             <% end %>
         </div>
         <hr class="featurette-divider">    
-      <% end %>
+    <% end %>
+
+    <center>
+        <div class="apple_pagination">
+            <%= will_paginate @posts %>
+        </div>
+    </center>
+    <hr class="featurette-divider">   
 
     <% if can? :dashboard, @user %>
             <%= link_to 'Nuevo Post', 
