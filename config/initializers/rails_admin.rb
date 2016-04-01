@@ -27,9 +27,10 @@ RailsAdmin.config do |config|
     bulk_delete
     show
     edit
-    delete
+    delete do
+      except ['About']
+    end
     show_in_app
-
     ## With an audit adapter, you can add:
     history_index
     history_show

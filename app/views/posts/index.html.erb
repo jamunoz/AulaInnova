@@ -21,7 +21,7 @@
                         </span> 
                         &nbsp;&nbsp;
                         <span class="glyphicon glyphicon-calendar"> 
-                            <%= post.created_at %> 
+                            <%= post.created_at.to_formatted_s(:long) %>   
                         </span> 
                     </p>
                     <p class="lead"> 
@@ -37,7 +37,7 @@
                     </span> 
                     &nbsp;&nbsp;
                     <span class="glyphicon glyphicon-calendar"> 
-                        <%= post.created_at %> 
+                        <%= post.created_at.to_formatted_s(:long)  %> 
                     </span> 
                 </p>
                 <p class="lead"> 

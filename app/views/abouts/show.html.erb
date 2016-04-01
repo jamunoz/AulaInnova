@@ -4,29 +4,41 @@
 		</center>
 	</div>
 
-	<div class="container">
+<div class="container">
+	<p>
 		<h2>Misión</h2>
 		<hr class="featurette-divider">
 	 	<%= raw @about.mission %>
-	</div>
+	</p>
 
 	<br>
 
-	<div class="container">
+	<p>
 		<h2>Visión</h2>
 		<hr class="featurette-divider">
 	 	<%= raw @about.vision %>
-	</div>
+	</p>
 
 	<br>
 	
-	<div class="container">
+	<p>
 		<h2>Compañía</h2>
 		<hr class="featurette-divider">
 	 	<%= raw @about.company %>
-	</div>
+	</p>
 
-	<%= render 'pages/shared/footer' %>
+	<hr class="featurette-divider"> 
+
+	<% if can? :dashboard, @user %>
+		<%= link_to 'Editar', 
+			rails_admin.edit_path(model_name: 'about', id: @about.id),
+			class: "btn btn-primary" 
+		%>
+	<% end %>
+
+</div>
+
+<%= render 'pages/shared/footer' %>
 
 
 
