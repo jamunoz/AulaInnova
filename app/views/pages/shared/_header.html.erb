@@ -33,11 +33,21 @@
 		           			</a>
 		            </ul>
 		          	<div class="navbar-form navbar-right">
-		          		<% if user_signed_in? %>
-		          			<%=	link_to "Panel de Control", rails_admin_path, 
-		          				class: "btn btn-default" %>
-							<%=	link_to "Cerrar Sesión", destroy_user_session_path, 
-								class: "btn btn-default", :method => :delete  %>
+		          		<% if current_user %>
+		          			<%=	link_to "AulaInnova Virtual", destroy_user_session_path, 
+								class: "btn btn-default" %>
+							<div class="navbar-form navbar-right">
+			          			<% if can? :dashboard, @user %>
+			          				<%=	link_to "", rails_admin_path, 
+			          				class: "glyphicon glyphicon-cog", id: 'dashboard',
+			          				'data-toggle' => 'tooltip', 'title' => 'Panel de Control' %>
+			          				&nbsp;&nbsp;
+			          			<% end %>
+								<%=	link_to "", destroy_user_session_path, 
+									class: "glyphicon glyphicon-log-out gray", :method => :delete,
+									id: 'logout', 'data-toggle' => 'tooltip', 
+									'title' => 'Cerrar Sesión' %>
+							</div>
 						<% else %>
 							<%=	link_to "Registrarse", new_user_registration_path, class: "btn btn-default" %>
 							<%=	link_to "Iniciar Sesión", user_session_path, 
@@ -74,7 +84,7 @@
 		                	<%= link_to "Galería de Imagenes", pages_picture_gallery_path %>
 		                </li>
 		               	<li>
-		                	<%= link_to "Blog", pages_blog_path %>
+		                	<%= link_to "Blog", posts_path %>
 		                </li>
 		               	<li>
 		                	<%= link_to "Contáctanos", pages_contact_path %>

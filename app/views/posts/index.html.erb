@@ -1,0 +1,67 @@
+<div class="jumbotron" style="background-color: #f2f2f2; border-bottom: 1px solid; border-color: #e6e6e6">
+    <center>
+        <h2>Blog</h2>
+    </center>
+</div>
+
+<div class="container"> 
+
+    <% @posts.each do |post| %>
+        <div class="row featurette">
+            <% if post.asset.file? %>
+                <div class="col-md-5">
+                    <%= image_tag post.asset.url(:large), 
+                    class: "featurette-image img-responsive center-block" %>
+                </div>
+                <div class="col-md-7">
+                    <h2 class="featurette-heading"> <%= post.title %> </h2>
+                    <p>
+                        <span class="glyphicon glyphicon-user"> 
+                            AulaInnova
+                        </span> 
+                        &nbsp;&nbsp;
+                        <span class="glyphicon glyphicon-calendar"> 
+                            <%= post.created_at %> 
+                        </span> 
+                    </p>
+                    <p class="lead"> 
+                        <%= post.lead %> 
+                    </p>
+                    <%= link_to 'Continuar Leyendo', post, class: "btn btn-default" %>
+                </div>
+            <% else %>
+                <h2 class="featurette-heading"> <%= post.title %> </h2>
+                <p>
+                    <span class="glyphicon glyphicon-user"> 
+                        AulaInnova
+                    </span> 
+                    &nbsp;&nbsp;
+                    <span class="glyphicon glyphicon-calendar"> 
+                        <%= post.created_at %> 
+                    </span> 
+                </p>
+                <p class="lead"> 
+                    <%= post.lead %> 
+                </p>
+                <%= link_to 'Continuar Leyendo', post, class: "btn btn-default" %>
+            <% end %>
+        </div>
+        <hr class="featurette-divider">    
+      <% end %>
+
+    <% if can? :dashboard, @user %>
+            <%= link_to 'Nuevo Post', 
+                rails_admin.new_path(model_name: 'post'),
+                class: "btn btn-primary" %>
+            &nbsp;
+    <% end %>
+
+</div>
+
+<%= render 'pages/shared/footer' %>
+
+
+
+
+
+        

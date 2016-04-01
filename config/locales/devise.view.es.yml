@@ -7,10 +7,22 @@ es:
         password: Contraseña
         password_confirmation: Confirmar Contraseña
         remember_me: Recordarme
+        created_at: Fecha de Creación
+        updated_at: Fecha de Actualización
       about:
         mission: Misión
         vision: Visión
         company: Compañía
+        created_at: Fecha de Creación
+        updated_at: Fecha de Actualización
+      post:
+        title: Título
+        lead: Copete
+        body: Cuerpo
+        asset: Imagen
+        user_id: Autor
+        created_at: Fecha de Creación
+        updated_at: Fecha de Actualización
     models:
       user: Usuario
   devise:
@@ -26,7 +38,7 @@ es:
       invalid: Email y/o contraseña incorrectos
       last_attempt: Tienes un intento más antes de que tu cuenta sea bloqueada
       locked: Tu cuenta está bloqueada
-      not_found_in_database: Email y/o contraseña no válidos
+      not_found_in_database: Email y/o contraseña inválidos
       timeout: Tu sesión expiró. Por favor, inicia sesión nuevamente para continuar
       unauthenticated: Tienes que iniciar sesión o registrarte para continuar
       unconfirmed: Tienes que confirmar tu cuenta para continuar
@@ -93,8 +105,8 @@ es:
       already_signed_out: Sesión finalizada
       new:
         sign_in: Iniciar sesión
-      signed_in: Sesión iniciada
-      signed_out: Sesión finalizada
+      signed_in: Sesión Iniciada
+      signed_out: Sesión Finalizada
     shared:
       links:
         back: Atrás

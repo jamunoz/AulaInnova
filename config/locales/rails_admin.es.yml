@@ -71,7 +71,7 @@ es:
         menu: "Mostrar"
         breadcrumb: "%{object_label}"
       show_in_app:
-        menu: "Mostrar en la app"
+        menu: "Mostrar en la Aplicación"
       new:
         title: "Nuevo %{model_label}"
         menu: "Agregar nuevo"

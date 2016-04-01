@@ -16,4 +16,5 @@ class ApplicationController < ActionController::Base
   def after_sign_out_path_for(users)
   	pages_home_path
   end
+
 end

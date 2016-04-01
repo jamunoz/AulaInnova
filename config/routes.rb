@@ -18,5 +18,7 @@ Rails.application.routes.draw do
   resources :abouts, only: [:show]
   get 'pages/about' => 'abouts#show', id: 2
 
+  resources :posts, only: [:index, :show]
+
 end
 

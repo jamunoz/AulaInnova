@@ -1,0 +1,48 @@
+<div class="container">
+
+	<div class="col-md-8">
+		<p>
+			<h2 class="featurette-heading"> <%= @post.title %> </h2>
+		</p>
+		<hr class="featurette-divider">
+
+	    <p>
+	        <span class="glyphicon glyphicon-user"> 
+	            AulaInnova
+	        </span> 
+	        &nbsp;&nbsp;
+	        <span class="glyphicon glyphicon-calendar"> 
+	            <%= @post.created_at %> 
+	        </span> 
+	    </p>
+
+	    <br>
+
+	    <% if @post.asset.file? %>
+		    <p> 
+			<%= image_tag @post.asset.url(:large), 
+		        class: "featurette-image img-responsive center-block" %>
+		    </p>
+		    <br>
+		<% end %>
+	    
+	    <p class="body">
+			<%= raw @post.body %>
+		</p>
+
+		<hr class="featurette-divider">  
+
+		<% if can? :dashboard, @user %>
+			<%= link_to 'Editar', 
+				rails_admin.edit_path(model_name: 'post', id: @post.id),
+				class: "btn btn-primary" %>
+			&nbsp;
+		<% end %>
+		<%= link_to 'Volver Atrás', posts_path, 
+		class: "btn btn-default" %>
+
+	</div>
+
+</div>
+
+<%= render 'pages/shared/footer' %>

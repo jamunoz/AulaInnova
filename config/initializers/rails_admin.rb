@@ -95,4 +95,40 @@ RailsAdmin.config do |config|
     end
   end
 
+  config.model Post do
+    edit do
+
+      configure :user do
+        visible false
+      end
+
+      field :asset do
+        label "Imagen"
+      end
+
+      field :title do
+        label "Título"
+        required true 
+      end
+
+      field :lead do
+        label "Copete"
+        required true 
+      end
+
+      field :body, :ck_editor do
+        required true 
+        label "Cuerpo"
+      end
+
+      field :user_id, :hidden do
+        visible true
+        default_value do
+          bindings[:view]._current_user.id
+        end
+      end
+
+    end
+  end
+
 end
