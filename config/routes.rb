@@ -1,24 +1,18 @@
 Rails.application.routes.draw do
 
-  mount Ckeditor::Engine => '/ckeditor'
-  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+    mount Ckeditor::Engine => '/ckeditor'
+    mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
     devise_for :users, controllers: {
     	sessions: 'users/sessions'
     }
 
-  root 'pages#home'
+    root 'home#index'
 
-	get 'pages/home', to: 'pages#home'
-  #get 'pages/about' => 'pages#about'
-  get 'pages/robotics_workshop' => 'pages#robotics_workshop'
-  get 'pages/blog' => 'pages#blog'
-  get 'pages/picture_gallery' => 'pages#picture_gallery'
-  get 'pages/contact' => 'pages#contact'
+	get 'home', to: 'home#index'
 
-  resources :abouts, only: [:show]
-  get 'pages/about' => 'abouts#show', id: 2
-
-  resources :posts, only: [:index, :show]
+    resources :abouts, only: [:index]
+    resources :posts, only: [:index, :show, :delete]
+    resources :contacts, only: [:index, :new, :create]
 
 end
 

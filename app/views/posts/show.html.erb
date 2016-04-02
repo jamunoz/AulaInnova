@@ -7,11 +7,11 @@
 		<hr class="featurette-divider">
 
 	    <p>
-	        <span class="glyphicon glyphicon-user"> 
+	        <span class="glyphicon glyphicon-user gray"> 
 	            AulaInnova
 	        </span> 
 	        &nbsp;&nbsp;
-	        <span class="glyphicon glyphicon-calendar"> 
+	        <span class="glyphicon glyphicon-calendar gray"> 
 	            <%= @post.created_at.to_formatted_s(:long)  %> 
 	        </span> 
 	    </p>
@@ -32,17 +32,27 @@
 
 		<hr class="featurette-divider">  
 
+		<div class="navbar-form">
 		<% if can? :dashboard, @user %>
-			<%= link_to 'Editar', 
+			<%= link_to '', 
 				rails_admin.edit_path(model_name: 'post', id: @post.id),
-				class: "btn btn-primary" %>
-			&nbsp;
+				class: "glyphicon glyphicon-edit blue", 
+					id: 'editar', 'data-toggle' => 'tooltip',
+					'title' => 'Editar' %>
+			&nbsp;&nbsp;
+			<%= link_to '', @post, class: "glyphicon glyphicon-remove blue", 
+                id: "eliminar", 'data-toggle' => 'tooltip', 'title' => 'Eliminar',
+                method: :delete, data: { confirm: 'Estás seguro de eliminar esta publicación?' } 
+              %>
 		<% end %>
-		<%= link_to 'Volver Atrás', posts_path, 
-		class: "btn btn-default" %>
 
+			<div class="navbar-right">
+				<%= link_to 'Volver Atrás', posts_path, 
+				class: "btn btn-default" %>
+			</div>
+		</div>
 	</div>
 
 </div>
 
-<%= render 'pages/shared/footer' %>
+<%= render 'shared/footer' %>

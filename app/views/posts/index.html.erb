@@ -6,6 +6,18 @@
 
 <div class="container"> 
 
+    <div class="row featurette">
+        <div class="col-md-12">
+            <form class="navbar-form navbar-right">
+                <%= form_tag("/search", method: "get") do %>
+                    <%= text_field_tag 'search', nil, placeholder: 'Buscar publicación...', 
+                    class: 'form-control' %>
+                <% end %>
+            </form>
+        </div>
+    </div>
+    <hr class="featurette-divider"> 
+
     <% @posts.each do |post| %>
         <div class="row featurette">
             <% if post.asset.file? %>
@@ -16,11 +28,11 @@
                 <div class="col-md-7">
                     <h2 class="featurette-heading"> <%= post.title %> </h2>
                     <p>
-                        <span class="glyphicon glyphicon-user"> 
+                        <span class="glyphicon glyphicon-user gray"> 
                             AulaInnova
                         </span> 
                         &nbsp;&nbsp;
-                        <span class="glyphicon glyphicon-calendar"> 
+                        <span class="glyphicon glyphicon-calendar gray"> 
                             <%= post.created_at.to_formatted_s(:long) %>   
                         </span> 
                     </p>
@@ -30,13 +42,14 @@
                     <%= link_to 'Continuar Leyendo', post, class: "btn btn-default" %>
                 </div>
             <% else %>
+                <div class="col-md-12">
                 <h2 class="featurette-heading"> <%= post.title %> </h2>
                 <p>
-                    <span class="glyphicon glyphicon-user"> 
+                    <span class="glyphicon glyphicon-user gray"> 
                         AulaInnova
                     </span> 
                     &nbsp;&nbsp;
-                    <span class="glyphicon glyphicon-calendar"> 
+                    <span class="glyphicon glyphicon-calendar gray"> 
                         <%= post.created_at.to_formatted_s(:long)  %> 
                     </span> 
                 </p>
@@ -44,20 +57,23 @@
                     <%= post.lead %> 
                 </p>
                 <%= link_to 'Continuar Leyendo', post, class: "btn btn-default" %>
+                </div>
             <% end %>
         </div>
         <hr class="featurette-divider">    
     <% end %>
 
-    <center>
-        <div class="apple_pagination">
-            <%= will_paginate @posts %>
-        </div>
-    </center>
-    <hr class="featurette-divider">   
-
+    <% if @posts.count > 4 %>
+        <center>
+            <div class="apple_pagination">
+                <%= will_paginate @posts %>
+            </div>
+        </center>
+        <hr class="featurette-divider">  
+    <% end %>
+     
     <% if can? :dashboard, @user %>
-            <%= link_to 'Nuevo Post', 
+            <%= link_to 'Nueva Publicación', 
                 rails_admin.new_path(model_name: 'post'),
                 class: "btn btn-primary" %>
             &nbsp;
@@ -65,7 +81,7 @@
 
 </div>
 
-<%= render 'pages/shared/footer' %>
+<%= render 'shared/footer' %>
 
 
 

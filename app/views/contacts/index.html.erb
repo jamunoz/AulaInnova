@@ -1,0 +1,27 @@
+<div class="jumbotron" style="background-color: #f2f2f2; border-bottom: 1px solid; border-color: #e6e6e6">
+    <center>
+        <h2>Contáctanos</h2>
+    </center>
+</div>
+
+<div class="container"> 
+	<div class="col-md-8">
+		<h2>
+			<p> ¿Tienes alguna inquietud? ¡Felices te ayudaremos! </p>
+		</h2>
+		<h3>
+			<p> Por favor, completa este formulario de contacto para hacernos llegar tu inquietud. Lo responderemos lo más rápido que nos sea posible.</p>
+		</h3>
+		<hr class="featurette-divider">
+
+	  	<%= simple_form_for @contact, :html => {:class => 'form-horizontal' } do |f| %>
+	    	<%= f.input :name, :label => "Nombre", :required => true %>
+	    	<%= f.input :email, :label => "Correo Electrónico", :required => true %>
+	    	<%= f.input :message, :label => "Mensaje", :as => :text, :required => false, 
+	    				:input_html => {:rows => 10} %>
+	    	<%= f.button :submit, 'Enviar', :class=> "btn btn-success" %>
+	  	<% end %>
+  	</div>
+</div>
+
+<%= render 'shared/footer' %>

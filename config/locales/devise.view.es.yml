@@ -25,6 +25,7 @@ es:
         updated_at: Fecha de Actualización
     models:
       user: Usuario
+      post: Publicación
   devise:
     confirmations:
       confirmed: Tu cuenta ha sido confirmada satisfactoriamente

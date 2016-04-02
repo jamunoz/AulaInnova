@@ -15,9 +15,9 @@ class AboutsController < ApplicationController
   end
 
   # GET /abouts/new
-  def new
-    @about = About.new
-  end
+  #def new
+  #  @about = About.new
+  #end
 
   # GET /abouts/1/edit
   def edit
@@ -25,19 +25,18 @@ class AboutsController < ApplicationController
 
   # POST /abouts
   # POST /abouts.json
-  def create
-    @about = About.new(about_params)
-
-    respond_to do |format|
-      if @about.save
-        format.html { redirect_to @about, notice: 'Acerca de Nosotros fue creado satisfactoriamente.' }
-        format.json { render :show, status: :created, location: @about }
-      else
-        format.html { render :new }
-        format.json { render json: @about.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+  #def create
+  #  @about = About.new(about_params)
+  #  respond_to do |format|
+  #    if @about.save
+  #      format.html { redirect_to @about, notice: 'Acerca de Nosotros fue creado satisfactoriamente.' }
+  #      format.json { render :show, status: :created, location: @about }
+  #    else
+  #      format.html { render :new }
+  #      format.json { render json: @about.errors, status: :unprocessable_entity }
+  #    end
+  #  end
+  #end
 
   # PATCH/PUT /abouts/1
   # PATCH/PUT /abouts/1.json
@@ -55,13 +54,13 @@ class AboutsController < ApplicationController
 
   # DELETE /abouts/1
   # DELETE /abouts/1.json
-  def destroy
-    @about.destroy
-    respond_to do |format|
-      format.html { redirect_to abouts_url, notice: 'Acerca de Nosotros fue eliminado satisfactoriamente.' }
-      format.json { head :no_content }
-    end
-  end
+  #def destroy
+  #  @about.destroy
+  #  respond_to do |format|
+  #    format.html { redirect_to abouts_url, notice: 'Acerca de Nosotros fue eliminado satisfactoriamente.' }
+  #    format.json { head :no_content }
+  #  end
+  #end
 
   private
     # Use callbacks to share common setup or constraints between actions.
