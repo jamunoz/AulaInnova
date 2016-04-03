@@ -2,6 +2,7 @@ es:
   activerecord:
     attributes:
       user:
+        id: ID
         current_password: Contraseña Actual
         email: Correo Electrónico
         password: Contraseña
@@ -10,22 +11,33 @@ es:
         created_at: Fecha de Creación
         updated_at: Fecha de Actualización
       about:
+        id: ID
         mission: Misión
         vision: Visión
         company: Compañía
         created_at: Fecha de Creación
         updated_at: Fecha de Actualización
       post:
+        id: ID
         title: Título
         lead: Copete
         body: Cuerpo
-        asset: Imagen
+        asset: Imagen de Portada
         user_id: Autor
         created_at: Fecha de Creación
         updated_at: Fecha de Actualización
+      album:
+        id: ID
+        title: Título
+        description: Descripción
+        asset: Imagen de Portada
+        created_at: Fecha de Creación
+        updated_at: Fecha de Actualización
+        url: Dirección URL
     models:
-      user: Usuario
-      post: Publicación
+      user: Usuarios
+      post: Publicaciones
+      album: Álbumes
   devise:
     confirmations:
       confirmed: Tu cuenta ha sido confirmada satisfactoriamente

@@ -16,5 +16,6 @@
 //= require jquery
 //= require bootstrap-sprockets
 //= require ckeditor/init
+//= require data-confirm-modal
 //= require_tree .
 

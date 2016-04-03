@@ -5,54 +5,75 @@
 			<h2 class="featurette-heading"> <%= @post.title %> </h2>
 		</p>
 		<hr class="featurette-divider">
-
 	    <p>
 	        <span class="glyphicon glyphicon-user gray"> 
-	            AulaInnova
+	            InnovaTron
 	        </span> 
 	        &nbsp;&nbsp;
 	        <span class="glyphicon glyphicon-calendar gray"> 
 	            <%= @post.created_at.to_formatted_s(:long)  %> 
 	        </span> 
 	    </p>
-
 	    <br>
-
 	    <% if @post.asset.file? %>
 		    <p> 
-			<%= image_tag @post.asset.url(:large), 
+				<%= image_tag @post.asset.url(:large), 
 		        class: "featurette-image img-responsive center-block" %>
 		    </p>
 		    <br>
 		<% end %>
-	    
 	    <p class="body">
 			<%= raw @post.body %>
 		</p>
-
 		<hr class="featurette-divider">  
 
 		<div class="navbar-form">
-		<% if can? :dashboard, @user %>
-			<%= link_to '', 
-				rails_admin.edit_path(model_name: 'post', id: @post.id),
-				class: "glyphicon glyphicon-edit blue", 
-					id: 'editar', 'data-toggle' => 'tooltip',
-					'title' => 'Editar' %>
-			&nbsp;&nbsp;
-			<%= link_to '', @post, class: "glyphicon glyphicon-remove blue", 
-                id: "eliminar", 'data-toggle' => 'tooltip', 'title' => 'Eliminar',
-                method: :delete, data: { confirm: 'Estás seguro de eliminar esta publicación?' } 
-              %>
-		<% end %>
+			Comparte esta publicación:
+			<%= link_to image_tag("/images/buttons/social-media/flat-icons/facebook.png", size: "24x24"), 
+			'https://www.facebook.com/sharer/sharer.php?u=' << request.original_url.to_s,
+			target: "_blank", id: "facebook", 'data-toggle' => 'tooltip', 'title' => 'Facebook',
+			class: "hvr-grow" %>
+			<%= link_to image_tag("/images/buttons/social-media/flat-icons/twitter.png", size: "24x24"), 
+			'https://twitter.com/home?status=' << request.original_url.to_s,
+			target: "_blank", id: "twitter", 'data-toggle' => 'tooltip', 'title' => 'Twitter',
+			class: "hvr-grow" %>
+			<%= link_to image_tag("/images/buttons/social-media/flat-icons/google+.png", size: "24x24"), 
+			'https://plus.google.com/share?url=' << request.original_url.to_s,
+			target: "_blank", id: "google+", 'data-toggle' => 'tooltip', 'title' => 'Google+',
+			class: "hvr-grow" %>
+			<%= link_to image_tag("/images/buttons/social-media/flat-icons/gmail.png", size: "24x24"), 
+			'mailto:?' << request.original_url.to_s,
+			target: "_blank", id: "email", 'data-toggle' => 'tooltip', 'title' => 'Correo Electrónico',
+			class: "hvr-grow" %>
+		</div> 
+		<hr class="featurette-divider">  
 
-			<div class="navbar-right">
-				<%= link_to 'Volver Atrás', posts_path, 
-				class: "btn btn-default" %>
-			</div>
+		<div>
+			<% if can? :dashboard, @user %>
+				<%= link_to '', 
+					rails_admin.edit_path(model_name: 'post', id: @post.id),
+					class: "glyphicon glyphicon-edit blue", 
+					'data-toggle' => 'tooltip', 'title' => 'Editar Publicación' %>
+				&nbsp;&nbsp;
+				<%= link_to '', @post, class: "glyphicon glyphicon-remove blue", 
+	                'data-toggle' => 'tooltip', 'title' => 'Eliminar Publicación',
+	                method: :delete, data: {
+	                	confirm: '<center>
+	                				<h4>¿Estás seguro de eliminar esta publicación?</h4>
+	                			  </center><br>',
+	                	verify: 'Eliminar Publicación', 
+	                	verify_text: 'Escribe "Eliminar Publicación" para confirmar.'
+	                } 
+	             %>
+	             &nbsp;&nbsp;
+			<% end %>
+			<%= link_to 'Volver Atrás', posts_path, class: "btn btn-default" %>
 		</div>
 	</div>
 
 </div>
 
 <%= render 'shared/footer' %>
+
+
+

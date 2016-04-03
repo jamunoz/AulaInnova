@@ -1,5 +1,7 @@
 RailsAdmin.config do |config|
 
+  config.main_app_name = ["InnovaTron", "Panel de Control"]
+
   ### Popular gems integration
 
   ## == Devise ==
@@ -72,13 +74,11 @@ RailsAdmin.config do |config|
         #label "Contraseña"
         help 'Requerido. Longitud entre 8 y 20.'
       end
-
       field :password_confirmation do
         required true 
         #label "Confirmar Contraseña"
         help 'Requerido.'
       end
-
       field :roles_mask do
         label "Rol"
         help 'Opcional.'
@@ -104,31 +104,38 @@ RailsAdmin.config do |config|
       configure :user do
         visible false
       end
-
       field :asset do
-        label "Imagen"
       end
-
       field :title do
-        label "Título"
         required true 
       end
-
       field :lead do
-        label "Copete"
         required true 
       end
-
       field :body, :ck_editor do
         required true 
-        label "Cuerpo"
       end
-
       field :user_id, :hidden do
         visible true
         default_value do
           bindings[:view]._current_user.id
         end
+      end
+
+    end
+  end
+
+  config.model Album do
+    edit do
+
+      field :title do
+        required true 
+      end
+        field :description do
+        required true 
+      end
+      field :url do
+        required true 
       end
 
     end

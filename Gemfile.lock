@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/ifad/data-confirm-modal.git
+  revision: a2018ab8893cdeeeffaae407368ed1a20ea72b30
+  specs:
+    data-confirm-modal (1.1.0)
+      railties (>= 3.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -84,6 +91,8 @@ GEM
       activesupport (>= 4.1.0)
     haml (4.0.7)
       tilt
+    hover-rails (2.0.2)
+      railties (>= 3.2)
     i18n (0.7.0)
     jbuilder (2.4.1)
       activesupport (>= 3.0.0, < 5.1)
@@ -251,9 +260,11 @@ DEPENDENCIES
   cancancan
   ckeditor
   coffee-rails (~> 4.1.0)
+  data-confirm-modal!
   devise
   devise-i18n
   font-awesome-sass (~> 4.5.0)
+  hover-rails
   jbuilder (~> 2.0)
   jquery-rails
   mail_form

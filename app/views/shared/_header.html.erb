@@ -7,34 +7,41 @@
 		<nav class="navbar navbar-default navbar-static-top">
 	        <div class="container">
 		        	<ul class="nav navbar-nav" style="margin: 14px">
-		           			<a id="facebook" href="https://www.facebook.com/" data-toggle="tooltip" title="Facebook">
-		           				<img class="opacity" src="/images/buttons/social-media/facebook.png" width=21 height=21></img>
-		           			</a>
-		           			<a id="twitter" href="https://www.twitter.com/" data-toggle="tooltip" title="Twitter">
-		           				<img class="opacity" src="/images/buttons/social-media/twitter.png" width=21 height=21></img>
-		           			</a>
-		           			<a id="googleplus" href="https://plus.google.com/" data-toggle="tooltip" title="Google+">
-		           				<img class="opacity" src="/images/buttons/social-media/googleplus.png" width=21 height=21></img>
-		           			</a>
-		           			<a id="linkedin" href="https://www.linkedin.com" data-toggle="tooltip" title="Linkedin">
-		           				<img class="opacity" src="/images/buttons/social-media/linkedin.png" width=21 height=21></img>
-		           			</a>
-		           			<a id="instagram" href="https://www.instagram.com" data-toggle="tooltip" title="Instagram">
-		           				<img class="opacity" src="/images/buttons/social-media/instagram.png" width=21 height=21></img>
-		           			</a>
-		           			<a id="flickr" href="https://www.flickr.com/" data-toggle="tooltip" title="Flickr">
-		           				<img class="opacity" src="/images/buttons/social-media/flickr.png" width=21 height=21></img>
-		           			</a>
-		           			<a id="youtube" href="https://www.youtube.com/" data-toggle="tooltip" title="Youtube">
-		           				<img class="opacity" src="/images/buttons/social-media/youtube.png" width=21 height=21></img>
-		           			</a>
-		           			<a id="vimeo" href="https://www.vimeo.com/" data-toggle="tooltip" title="Vimeo">
-		           				<img class="opacity" src="/images/buttons/social-media/vimeo.png" width=21 height=21></img>
-		           			</a>
+						<%= link_to image_tag("/images/buttons/social-media/facebook.png", size: "24x24"), 
+						'https://www.facebook.com/',
+						'data-toggle' => 'tooltip', 'title' => 'Facebook', class: "hvr-bob" %>
+
+						<%= link_to image_tag("/images/buttons/social-media/twitter.png", size: "24x24"), 
+						'https://www.twitter.com/',
+						'data-toggle' => 'tooltip', 'title' => 'Twitter', class: "hvr-bob" %>
+
+						<%= link_to image_tag("/images/buttons/social-media/googleplus.png", size: "24x24"), 
+						'https://plus.google.com/',
+						'data-toggle' => 'tooltip', 'title' => 'Google+', class: "hvr-bob" %>
+
+						<%= link_to image_tag("/images/buttons/social-media/linkedin.png", size: "24x24"), 
+						'https://www.linkedin.com',
+						'data-toggle' => 'tooltip', 'title' => 'Linkedin', class: "hvr-bob" %>
+
+						<%= link_to image_tag("/images/buttons/social-media/instagram.png", size: "24x24"), 
+						'https://www.instagram.com',
+						'data-toggle' => 'tooltip', 'title' => 'Instagram', class: "hvr-bob" %>
+
+						<%= link_to image_tag("/images/buttons/social-media/flickr.png", size: "24x24"), 
+						'https://www.flickr.com',
+						'data-toggle' => 'tooltip', 'title' => 'Flickr', class: "hvr-bob" %>
+
+						<%= link_to image_tag("/images/buttons/social-media/youtube.png", size: "24x24"), 
+						'https://www.youtube.com',
+						'data-toggle' => 'tooltip', 'title' => 'Youtube', class: "hvr-bob" %>
+
+						<%= link_to image_tag("/images/buttons/social-media/vimeo.png", size: "24x24"), 
+						'https://www.vimeo.com',
+						'data-toggle' => 'tooltip', 'title' => 'Vimeo', class: "hvr-bob" %>
 		            </ul>
 		          	<div class="navbar-form navbar-right">
 		          		<% if current_user %>
-		          			<%=	link_to "AulaInnova Virtual", nil, class: "btn btn-default" %>
+		          			<%=	link_to "InnovaTron Virtual", nil, class: "btn btn-default" %>
 							<div class="navbar-form navbar-right">
 			          			<% if can? :dashboard, @user %>
 			          				<%=	link_to "", rails_admin_path, 
@@ -68,7 +75,7 @@
 		        <div id="navbar" class="navbar-collapse collapse">
 		            <ul class="nav navbar-nav">
 			            <div class="navbar-header">
-					        <a class="navbar-brand" style="color: black"> AulaInnova </a>
+					        <a class="navbar-brand" style="color: black"> InnovaTron </a>
 					    </div>
 		                <li>
 		                	<%= link_to "Inicio", home_path %>
@@ -80,7 +87,7 @@
 		                	<%= link_to "Robótica Educativa" %>
 		                </li>
 		                <li>
-		                	<%= link_to "Galería de Imagenes" %>
+		                	<%= link_to "Galería de Imagenes", albums_path %>
 		                </li>
 		               	<li>
 		                	<%= link_to "Blog", posts_path %>

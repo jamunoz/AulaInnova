@@ -49,6 +49,10 @@ gem 'will_paginate', '~> 3.0.6'
 # Email Form
 gem 'mail_form'
 gem 'simple_form'
+# Hover
+gem 'hover-rails'
+# Modal
+gem 'data-confirm-modal', github: 'ifad/data-confirm-modal'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

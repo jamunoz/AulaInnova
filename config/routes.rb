@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  
     mount Ckeditor::Engine => '/ckeditor'
     mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
     devise_for :users, controllers: {
@@ -13,6 +14,6 @@ Rails.application.routes.draw do
     resources :abouts, only: [:index]
     resources :posts, only: [:index, :show, :delete]
     resources :contacts, only: [:index, :new, :create]
-
+    resources :albums, only: [:index, :show, :create]
 end
 

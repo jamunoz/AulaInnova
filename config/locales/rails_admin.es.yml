@@ -38,7 +38,7 @@ es:
       clear_all: "Borrar todos"
       up: "Arriba"
       down: "Abajo"
-      navigation: "Navegación"
+      navigation: "Módulos"
       navigation_static_label: "Enlaces"
       log_out: "Cerrar Sesión"
       ago: "atrás" #TODO: better something like "%{time} ago" -> "hace %{time}"
@@ -60,8 +60,8 @@ es:
     actions:
       dashboard:
         title: "Panel de Control"
-        menu: "Panel de Control"
-        breadcrumb: "Panel de Control"
+        menu: "Modulos"
+        breadcrumb: "Módulos"
       index:
         title: "Lista de %{model_label_plural}"
         menu: "Listar"
