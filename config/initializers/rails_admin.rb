@@ -137,6 +137,9 @@ RailsAdmin.config do |config|
       field :url do
         required true 
       end
+      field :asset do
+        required true
+      end
 
     end
   end

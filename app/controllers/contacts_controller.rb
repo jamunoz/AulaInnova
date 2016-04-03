@@ -16,7 +16,7 @@ class ContactsController < ApplicationController
 	    respond_to do |format|
 		    if @contact.deliver
 		      	format.html { 
-		      		redirect_to @contact, notice: '¡Muchas gracias! Tu mensaje ha sido enviado con éxito.'
+		      		redirect_to @contact, notice: '¡Muchas gracias! Tu mensaje ha sido enviado satisfactoriamente.'
 		      	}
 	      	else
 	      		format.html { 

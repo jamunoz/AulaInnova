@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     resources :abouts, only: [:index]
     resources :posts, only: [:index, :show, :delete]
     resources :contacts, only: [:index, :new, :create]
-    resources :albums, only: [:index, :show, :create]
+    resources :albums, only: [:index, :delete]
+    
 end
 

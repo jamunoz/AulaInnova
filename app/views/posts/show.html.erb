@@ -41,6 +41,11 @@
 			'https://plus.google.com/share?url=' << request.original_url.to_s,
 			target: "_blank", id: "google+", 'data-toggle' => 'tooltip', 'title' => 'Google+',
 			class: "hvr-grow" %>
+			<%= link_to image_tag("/images/buttons/social-media/flat-icons/linkedin.png", 
+            size: "24x24"), 
+            'https://www.linkedin.com/shareArticle?mini=true&url=' << request.original_url.to_s,
+            target: "_blank", id: "linkedin", 'data-toggle' => 'tooltip', 'title' => 'Linkedin',
+            class: "hvr-grow" %>
 			<%= link_to image_tag("/images/buttons/social-media/flat-icons/gmail.png", size: "24x24"), 
 			'mailto:?' << request.original_url.to_s,
 			target: "_blank", id: "email", 'data-toggle' => 'tooltip', 'title' => 'Correo Electrónico',

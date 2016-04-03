@@ -1,29 +1,102 @@
-<p id="notice"><%= notice %></p>
+<div class="jumbotron" style="background-color: #f2f2f2; border-bottom: 1px solid; border-color: #e6e6e6">
+    <center>
+        <h2>Álbumes de Fotos</h2>
+    </center>
+</div>
 
-<h1>Listing Albums</h1>
+<div class="container"> 
+    
+    <hr class="featurette-divider">
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+    <div class="row">
+        <% @albums.each do |album| %>
+            <div class="col-lg-6">
+                <center> 
+                    <%= link_to (image_tag album.asset.url(:large), 
+                        class: "featurette-image img-responsive img-thumbnail hvr-glow"),
+                        album.url, target: "_blank", 'data-toggle' => 'tooltip', 
+                        'title' => 'Click para ver el album'
+                    %>
+                    <h2 class="featurette-heading"><%= album.title %></h2>
+                    <hr class="featurette-divider">  
+                </center>
+                <p>
+                    <span class="glyphicon glyphicon-user gray"> 
+                    InnovaTron
+                    </span> 
+                    &nbsp;&nbsp;
+                    <span class="glyphicon glyphicon-calendar gray"> 
+                        <%= album.created_at.to_formatted_s(:long) %>   
+                    </span>
+                </p>
+                <p class="lead"><%= album.description %></p>
+                <hr class="featurette-divider">
+                Comparte este álbum:
+                <%= link_to image_tag("/images/buttons/social-media/flat-icons/facebook.png", 
+                    size: "24x24"), 
+                    'https://www.facebook.com/sharer/sharer.php?u=' << album.url.to_s,
+                    target: "_blank", id: "facebook", 'data-toggle' => 'tooltip', 'title' => 'Facebook',
+                    class: "hvr-grow" %>
+                <%= link_to image_tag("/images/buttons/social-media/flat-icons/twitter.png", 
+                    size: "24x24"), 
+                    'https://twitter.com/home?status=' << album.url.to_s,
+                    target: "_blank", id: "twitter", 'data-toggle' => 'tooltip', 'title' => 'Twitter',
+                    class: "hvr-grow" %>
+                <%= link_to image_tag("/images/buttons/social-media/flat-icons/google+.png", 
+                    size: "24x24"), 
+                    'https://plus.google.com/share?url=' << album.url.to_s,
+                    target: "_blank", id: "google+", 'data-toggle' => 'tooltip', 'title' => 'Google+',
+                    class: "hvr-grow" %>
+                <%= link_to image_tag("/images/buttons/social-media/flat-icons/linkedin.png", 
+                    size: "24x24"), 
+                    'https://www.linkedin.com/shareArticle?mini=true&url=' << album.url.to_s,
+                    target: "_blank", id: "linkedin", 'data-toggle' => 'tooltip', 'title' => 'Linkedin',
+                    class: "hvr-grow" %>
+                <%= link_to image_tag("/images/buttons/social-media/flat-icons/gmail.png", 
+                    size: "24x24"), 'mailto:?' << album.url.to_s,
+                    target: "_blank", id: "email", 'data-toggle' => 'tooltip', 
+                    'title' => 'Correo Electrónico', class: "hvr-grow" %>
+                <hr class="featurette-divider">
+                <% if can? :dashboard, @user %>
+                    <%= link_to '', 
+                        rails_admin.edit_path(model_name: 'album', id: album.id),
+                            class: "glyphicon glyphicon-edit blue", 
+                            'data-toggle' => 'tooltip', 'title' => 'Editar Album' %>
+                            &nbsp;&nbsp;
+                    <%= link_to '', @album, class: "glyphicon glyphicon-remove blue", 
+                        'data-toggle' => 'tooltip', 'title' => 'Eliminar Album',
+                        method: :delete, data: {
+                            confirm:    '<center>
+                                            <h4>¿Estás seguro de eliminar este album?</h4>
+                                        </center><br>',
+                            verify: 'Eliminar Album', 
+                            verify_text: 'Escribe "Eliminar Album" para confirmar.'
+                        } 
+                    %>
+                    <hr class="featurette-divider">
+                <% end %>
+            </div>
+        <% end %> 
+    </div>
 
-  <tbody>
-    <% @albums.each do |album| %>
-      <tr>
-        <td><%= album.title %></td>
-        <td><%= album.description %></td>
-        <td><%= link_to 'Show', album %></td>
-        <td><%= link_to 'Edit', edit_album_path(album) %></td>
-        <td><%= link_to 'Destroy', album, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+    <div>
+        <% if @albums.count > 4 %>
+            <center>
+                <div class="apple_pagination">
+                    <%= will_paginate @albums %>
+                </div>
+            </center>
+            <hr class="featurette-divider">  
+        <% end %>
+         
+        <% if can? :dashboard, @user %>
+                <%= link_to 'Nuevo Album', 
+                    rails_admin.new_path(model_name: 'album'),
+                    class: "btn btn-primary" %>
+                &nbsp;
+        <% end %>
+    </div>
 
-<br>
+</div>
 
-<%= link_to 'New Album', new_album_path %>
+<%= render 'shared/footer' %>
