@@ -10,6 +10,7 @@
 
     <div class="row">
         <% @albums.each do |album| %>
+
             <div class="col-lg-6">
                 <center> 
                     <%= link_to (image_tag album.asset.url(:large), 
@@ -63,15 +64,15 @@
                             class: "glyphicon glyphicon-edit blue", 
                             'data-toggle' => 'tooltip', 'title' => 'Editar Album' %>
                             &nbsp;&nbsp;
-                    <%= link_to '', @album, class: "glyphicon glyphicon-remove blue", 
-                        'data-toggle' => 'tooltip', 'title' => 'Eliminar Album',
-                        method: :delete, data: {
+                    <%= link_to '', album, method: :delete, data: {
                             confirm:    '<center>
                                             <h4>¿Estás seguro de eliminar este album?</h4>
                                         </center><br>',
                             verify: 'Eliminar Album', 
                             verify_text: 'Escribe "Eliminar Album" para confirmar.'
-                        } 
+                        },
+                        class: "glyphicon glyphicon-remove blue", 
+                        'data-toggle' => 'tooltip', 'title' => 'Eliminar Album'
                     %>
                     <hr class="featurette-divider">
                 <% end %>

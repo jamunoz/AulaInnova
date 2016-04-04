@@ -3,10 +3,9 @@ class User < ActiveRecord::Base
 	has_paper_trail
 
   	# Include default devise modules. Others available are:
-  	# :lockable, :timeoutable and :omniauthable
-  	devise 	:database_authenticatable, :registerable,
-         	:recoverable, :rememberable, :trackable, :validatable,
-         	:confirmable
+  	# :lockable, :timeoutable and :omniauthable, :confirmable, :registerable
+  	devise 	:database_authenticatable, 
+         	:recoverable, :rememberable, :trackable, :validatable     
 
     ROLES = %i[administrador]
 

@@ -169,3 +169,9 @@ es:
     previous_label: "&#8592; Anterior"
     next_label: "Siguiente &#8594;"
     page_gap: "&hellip;"
+  simple_form:
+      "yes": 'Si'
+      "no": 'No'
+      required:
+        text: 'Campo Requerido'
+        mark: '*'

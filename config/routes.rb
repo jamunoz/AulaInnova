@@ -12,9 +12,9 @@ Rails.application.routes.draw do
 	get 'home', to: 'home#index'
 
     resources :abouts, only: [:index]
-    resources :posts, only: [:index, :show, :delete]
-    resources :contacts, only: [:index, :new, :create]
-    resources :albums, only: [:index, :delete]
+    resources :posts, only: [:index, :show, :destroy]
+    resources :contacts, only: [:index, :create]
+    resources :albums, only: [:index, :destroy]
     
 end
 
