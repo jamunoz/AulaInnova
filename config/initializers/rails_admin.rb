@@ -34,7 +34,9 @@ RailsAdmin.config do |config|
     delete do
       except ['About']
     end
-    show_in_app
+    show_in_app do
+      except ['Album']
+    end
     ## With an audit adapter, you can add:
     history_index
     history_show
