@@ -53,6 +53,8 @@ gem 'simple_form'
 gem 'hover-rails'
 # Modal
 gem 'data-confirm-modal', github: 'ifad/data-confirm-modal'
+# Postgres
+gem 'pg'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
